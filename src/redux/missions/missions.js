@@ -13,20 +13,30 @@ export const getMission = createAsyncThunk(GET_MISSION, async () => {
   return [];
 });
 
-// function fetchMission() {
-//   axios({
-//     method: "get",
-//     url: URL,
-//   }).then((res) => console.log(res.data));
-// }
-
-// fetchMission();
-
 const missionArr = [];
 const missionSlice = createSlice({
   name: "missions",
   initialState: missionArr,
-  reducers: {},
+  reducers: {
+    joinMission(state, action) {
+      return state.map((mission) => {
+        if (mission.mission_id !== action.payload) {
+          return { ...mission };
+        }
+
+        return { ...mission, joined: true, status: "Active member" };
+      });
+    },
+    leaveMission(state, action) {
+      return state.map((mission) => {
+        if (mission.mission_id !== action.payload) {
+          return { ...mission };
+        }
+
+        return { ...mission, joined: false, status: "Not a member" };
+      });
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(getMission.fulfilled, (state, action) => {
       const newMissions = state;
@@ -35,6 +45,8 @@ const missionSlice = createSlice({
           mission_id: mission[1].mission_id,
           mission_name: mission[1].mission_name,
           description: mission[1].description,
+          status: "Not a memmber",
+          joined: false,
         });
       });
       return newMissions;
@@ -43,3 +55,4 @@ const missionSlice = createSlice({
 });
 
 export default missionSlice.reducer;
+export const { joinMission, leaveMission } = missionSlice.actions;

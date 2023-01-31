@@ -1,18 +1,22 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Mission from "./Mission";
 import "../styles/missions.css";
 import { getMission } from "../redux/missions/missions";
 
 const Missions = () => {
+  const shouldGetMissions = useRef(true);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getMission());
+    if (shouldGetMissions.current) {
+      shouldGetMissions.current = false;
+      dispatch(getMission());
+    }
     // eslint-disable-next-line
   }, []);
 
   const missions = useSelector((state) => state.missions);
-  console.log(missions);
+
   return (
     <div className="missions-page">
       <div className="content">
@@ -27,6 +31,9 @@ const Missions = () => {
             key={mission.mission_id}
             missionName={mission.mission_name}
             desc={mission.description}
+            id={mission.mission_id}
+            status={mission.status}
+            joined={mission.joined}
           />
         ))}
       </div>
