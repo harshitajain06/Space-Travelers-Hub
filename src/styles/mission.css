@@ -1,0 +1,70 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.mission {
+  /* width: 80%; */
+
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  grid-auto-rows: auto;
+  border: 1px solid #ddd;
+}
+
+.mission:nth-child(odd) {
+  background: #eee;
+}
+
+.mission-name {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.mission-desc {
+  grid-column-start: 2;
+  grid-column-end: 10;
+  border-right: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+
+  padding: 0 5px;
+}
+
+button {
+  width: fit-content;
+}
+.mission-btn {
+  align-self: center;
+  justify-self: center;
+}
+
+.mission-status {
+  grid-column-start: 10;
+  grid-column-end: 11;
+
+  width: 100%;
+  height: 100%;
+}
+
+.mission-join {
+  grid-column-start: 11;
+  grid-column-end: 12;
+  width: 100%;
+  height: 100%;
+  border-left: 1px solid #ddd;
+}
+
+button {
+  font-size: 10px;
+  margin-left: 10px;
+  margin-top: 20px;
+}
+
+.status-button {
+  border: none;
+  background: #777;
+  color: #fff;
+}
