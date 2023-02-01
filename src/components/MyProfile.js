@@ -1,6 +1,6 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import "../styles/myProfile.css";
+import React from 'react';
+import { useSelector } from 'react-redux';
+import '../styles/myProfile.css';
 
 const MyProfile = () => {
   const missions = useSelector((state) => state.missions);
@@ -10,13 +10,11 @@ const MyProfile = () => {
       <div className="prof-missions">
         <h4>My Missions</h4>
         <ul>
-          {missions.map((mission) =>
-            mission.reserved ? (
-              <li key={mission.mission_id}>{mission.mission_name}</li>
-            ) : (
-              ""
-            )
-          )}
+          {missions.map((mission) => (mission.reserved ? (
+            <li key={mission.mission_id}>{mission.mission_name}</li>
+          ) : (
+            ''
+          )))}
         </ul>
       </div>
       <div className="prof-rockets">

@@ -1,8 +1,8 @@
-import React, { useEffect, useRef } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import Mission from "./Mission";
-import "../styles/missions.css";
-import { getMission } from "../redux/missions/missions";
+import React, { useEffect, useRef } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import Mission from './Mission';
+import '../styles/missions.css';
+import { getMission } from '../redux/missions/missions';
 
 const Missions = () => {
   const shouldGetMissions = useRef(true);

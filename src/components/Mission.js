@@ -1,10 +1,13 @@
-import React from "react";
-import { useDispatch } from "react-redux";
-import { leaveMission, joinMission } from "../redux/missions/missions";
-import "../styles/mission.css";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { leaveMission, joinMission } from '../redux/missions/missions';
+import '../styles/mission.css';
 
 const Mission = (props) => {
-  const { missionName, desc, id, reserved } = props;
+  const {
+    missionName, desc, id, reserved,
+  } = props;
 
   const dispatch = useDispatch();
 
@@ -18,7 +21,10 @@ const Mission = (props) => {
 
   return (
     <div className="mission">
-      <h4 className="mission-name">{missionName} </h4>
+      <h4 className="mission-name">
+        {missionName}
+        {' '}
+      </h4>
       <p className="mission-desc">{desc}</p>
 
       <div className="member-status">
@@ -50,6 +56,13 @@ const Mission = (props) => {
       </div>
     </div>
   );
+};
+
+Mission.propTypes = {
+  missionName: PropTypes.string.isRequired,
+  desc: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  reserved: PropTypes.bool.isRequired,
 };
 
 export default Mission;

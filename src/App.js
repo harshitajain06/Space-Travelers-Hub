@@ -1,9 +1,9 @@
 // import logo from './logo.svg';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from "./components/Header";
-import Rockets from "./components/Rockets";
-import Missions from "./components/Missions";
-import MyProfile from "./components/MyProfile";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/Header';
+import Rockets from './components/Rockets';
+import Missions from './components/Missions';
+import MyProfile from './components/MyProfile';
 
 function App() {
   return (
