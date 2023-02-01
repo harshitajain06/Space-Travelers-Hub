@@ -20,7 +20,7 @@ const Missions = () => {
   return (
     <div className="missions-page">
       <div className="content">
-        <h4 className="content-missions">Missions</h4>
+        <h4 className="content-mission">Mission</h4>
         <h4 className="content-desc">Description</h4>
         <h4 className="content-status">Status</h4>
         <h4 className="content-join">Join/Leave</h4>
@@ -33,7 +33,7 @@ const Missions = () => {
             desc={mission.description}
             id={mission.mission_id}
             status={mission.status}
-            joined={mission.joined}
+            reserved={mission.reserved}
           />
         ))}
       </div>

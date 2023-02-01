@@ -2,10 +2,9 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { leaveMission, joinMission } from "../redux/missions/missions";
 import "../styles/mission.css";
-// import PropTypes from "prop-types";
 
 const Mission = (props) => {
-  const { missionName, desc, id, joined } = props;
+  const { missionName, desc, id, reserved } = props;
 
   const dispatch = useDispatch();
 
@@ -22,38 +21,35 @@ const Mission = (props) => {
       <h4 className="mission-name">{missionName} </h4>
       <p className="mission-desc">{desc}</p>
 
-      <div className="status-button">
-        {joined ? <p>Active member</p> : <p>Not a member</p>}
+      <div className="member-status">
+        {reserved ? (
+          <p className="active-member">Active member</p>
+        ) : (
+          <p className="inactive-member">Not a member</p>
+        )}
       </div>
 
-      <div>
-        {joined ? (
+      <div className="join-cancel-btn">
+        {reserved ? (
           <button
             type="button"
-            className="join"
+            className="cancel-mission"
             onClick={() => handleCancelMission(id)}
           >
-            Cancel mission
+            Leave Mission
           </button>
         ) : (
           <button
             type="button"
-            className="join"
+            className="join-mission"
             onClick={() => handleJoinMission(id)}
           >
-            Join mission
+            Join Mission
           </button>
         )}
       </div>
     </div>
   );
 };
-
-// Mission.propTypes = {
-//   missionName: PropTypes.string.isRequired,
-//   desc: PropTypes.string.isRequired,
-//   id: PropTypes.string.isRequired,
-//   joined: PropTypes.bool.isRequired,
-// };
 
 export default Mission;

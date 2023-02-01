@@ -24,7 +24,7 @@ const missionSlice = createSlice({
           return { ...mission };
         }
 
-        return { ...mission, joined: true, status: "Active member" };
+        return { ...mission, reserved: true, status: "Active member" };
       });
     },
     leaveMission(state, action) {
@@ -33,7 +33,7 @@ const missionSlice = createSlice({
           return { ...mission };
         }
 
-        return { ...mission, joined: false, status: "Not a member" };
+        return { ...mission, reserved: false, status: "Not a member" };
       });
     },
   },
@@ -46,7 +46,7 @@ const missionSlice = createSlice({
           mission_name: mission[1].mission_name,
           description: mission[1].description,
           status: "Not a memmber",
-          joined: false,
+          reserved: false,
         });
       });
       return newMissions;
