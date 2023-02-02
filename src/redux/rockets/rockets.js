@@ -2,7 +2,6 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 export const rocketsData = createAsyncThunk('get/rocketsData', async () => {
   const response = await fetch('https://api.spacexdata.com/v3/rockets');
-  console.log(response)
   const data = await response.json();
   if (data) {
     return data;
@@ -12,7 +11,7 @@ export const rocketsData = createAsyncThunk('get/rocketsData', async () => {
 
 const initialState = [];
 
-export const rocketSlice = createSlice({
+const rocketSlice = createSlice({
   name: 'rockets',
   initialState,
   reducers: {
