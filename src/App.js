@@ -4,8 +4,16 @@ import Header from './components/Header';
 import Rockets from './components/Rockets';
 import Missions from './components/Missions';
 import MyProfile from './components/MyProfile';
+import { useDispatch } from 'react-redux';
+import { rocketsData } from './redux/rockets/rockets';
+import React, { useEffect } from 'react';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(rocketsData());
+  }, [dispatch]);
   return (
     <div className="App">
       <Router>
