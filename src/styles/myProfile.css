@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.profile {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.prof-missions,
+.prof-rockets {
+  width: 40%;
+}
+
+ul {
+  border: 1px solid #ddd;
+  margin-top: 5px;
+}
+
+li {
+  list-style: none;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  color: #555;
+}

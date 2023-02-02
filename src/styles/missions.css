@@ -1,0 +1,54 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.missions-page {
+  margin-top: 20px;
+}
+
+.missions {
+  border: 1px solid #ddd;
+  width: 90%;
+  margin: 0 auto;
+
+  /* margin-top: 20px; */
+}
+
+.content {
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  border: 1px solid #ddd;
+}
+
+.content-mission {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  padding: 4px;
+}
+
+.content-desc {
+  grid-column-start: 2;
+  grid-column-end: 10;
+  border-right: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  padding: 4px;
+}
+
+.content-status {
+  grid-column-start: 10;
+  grid-column-end: 11;
+  border-right: 1px solid #ddd;
+  padding: 4px;
+}
+
+.content-join {
+  grid-column-start: 11;
+  grid-column-end: 12;
+  padding: 4px;
+}
