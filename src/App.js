@@ -1,11 +1,19 @@
 // import logo from './logo.svg';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import React, { useEffect } from 'react';
 import Header from './components/Header';
 import Rockets from './components/Rockets';
 import Missions from './components/Missions';
 import MyProfile from './components/MyProfile';
+import { rocketsData } from './redux/rockets/rockets';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(rocketsData());
+  }, [dispatch]);
   return (
     <div className="App">
       <Router>
