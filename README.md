@@ -157,7 +157,7 @@ I would like to thank :
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/harshitajain06/bookstore/issues/).
+Feel free to check the [issues page](https://github.com/harshitajain06/ReactGroupProject/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
