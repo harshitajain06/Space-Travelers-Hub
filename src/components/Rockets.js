@@ -13,10 +13,33 @@ const Rockets = () => {
             <img className="rocket-img" src={r.flickr_images} alt={r.id} />
             <div className="rocket-txt">
               <h2>{r.name}</h2>
-              {r.reserved === true ? <span className="reserveBtn">&bull; Reserved</span> : ''}
+              {r.reserved === true ? (
+                <span className="reserveBtn">&bull; Reserved</span>
+              ) : (
+                ''
+              )}
               <p>{r.description}</p>
-              {r.reserved === false ? <button className="btn1" onClick={() => { dispatch(reserveRocket(r.id)); }} type="button">MAKE RESERVATION</button> : <button className="btn2" onClick={() => { dispatch(cancelReservation(r.id)); }} type="button">CANCEL RESERVATION</button>}
-
+              {r.reserved === false ? (
+                <button
+                  className="btn1"
+                  onClick={() => {
+                    dispatch(reserveRocket(r.id));
+                  }}
+                  type="button"
+                >
+                  MAKE RESERVATION
+                </button>
+              ) : (
+                <button
+                  className="btn2"
+                  onClick={() => {
+                    dispatch(cancelReservation(r.id));
+                  }}
+                  type="button"
+                >
+                  CANCEL RESERVATION
+                </button>
+              )}
             </div>
           </li>
         ))}

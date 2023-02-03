@@ -33,12 +33,19 @@ nav {
   display: flex;
 }
 
-.link {
+.links a {
   text-decoration: none;
+  padding: 0 15px;
+  color: #0290ff;
 }
 
-.active-link {
+/* #link {
+  text-decoration: none;
+} */
+
+.active {
   text-decoration: underline;
+  color: red;
 }
 
 hr {

@@ -1,17 +1,13 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 import logoImg from '../images/logo.png';
 import '../styles/header.css';
 
 const Header = () => {
-  const [link, setLink] = useState('');
-  const styles = {
-    padding: '0 15px',
-    color: '#0290ff',
+  const activeStyle = {
+    textDecoration: 'underline',
   };
-  const handleClick = (e) => {
-    setLink(e.target.classList.toggle('active-link'));
-  };
+
   return (
     <div>
       <nav>
@@ -20,33 +16,29 @@ const Header = () => {
           <h1 className="title">Space Travelers&apos; Hub</h1>
         </div>
         <div className="links">
-          <Link to="/" style={styles} className="link" onClick={handleClick}>
+          <NavLink
+            to="/"
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+          >
             Rockets
-            {' '}
-            {link}
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/missions"
-            style={styles}
-            className="link"
-            onClick={handleClick}
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Missions
-          </Link>
+          </NavLink>
           |
-          <Link
+          <NavLink
             to="/myprofile"
-            style={styles}
-            className="link"
-            onClick={handleClick}
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             My Profile
-          </Link>
+          </NavLink>
         </div>
       </nav>
       <hr />
     </div>
   );
 };
-
 export default Header;
