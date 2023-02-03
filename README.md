@@ -133,7 +133,8 @@ npm start
 
 
 I would like to thank :
-Microverse Study Material
+- Microverse Study Material
+- Awesome teamwork
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -164,7 +165,7 @@ Feel free to check the [issues page](https://github.com/harshitajain06/bookstore
 
 ## ⭐️ Show your support <a name="support"></a>
 
-If you like this project please approve it.
+If you like this project please give it a ⭐️.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
