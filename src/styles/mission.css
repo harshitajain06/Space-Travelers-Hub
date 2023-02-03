@@ -7,8 +7,6 @@
 }
 
 .mission {
-  /* width: 80%; */
-
   display: grid;
   grid-template-columns: repeat(11, 1fr);
   grid-auto-rows: auto;

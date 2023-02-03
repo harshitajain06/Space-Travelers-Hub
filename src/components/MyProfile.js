@@ -4,7 +4,7 @@ import '../styles/myProfile.css';
 
 const MyProfile = () => {
   const missions = useSelector((state) => state.missions);
-
+  const rockets = useSelector((state) => state.rockets);
   return (
     <div className="profile">
       <div className="prof-missions">
@@ -20,9 +20,7 @@ const MyProfile = () => {
       <div className="prof-rockets">
         <h4>Rockets</h4>
         <ul>
-          <li>Telstar</li>
-          <li>Falcon 9</li>
-          <li>Starship</li>
+          {rockets.map((rocket) => (rocket.reserved ? <li key={rocket.id}>{rocket.name}</li> : ''))}
         </ul>
       </div>
     </div>
